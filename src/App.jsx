@@ -5,27 +5,29 @@
  * @module App
  */
 
-import { useThemeContext } from './store/ThemeContext'
-import Navbar from './components/layout/Navbar'
+import { useThemeContext } from "./store/ThemeContext";
+import Navbar from "./components/layout/Navbar";
+import Hero from "./sections/Hero";
 
 /**
  * Root component — entry point of the UI tree
  * @returns {JSX.Element}
  */
 const App = () => {
-  const { isDark, toggleTheme } = useThemeContext()
+  const { isDark, toggleTheme } = useThemeContext();
 
   return (
-   <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)' }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "var(--bg)",
+        color: "var(--text)",
+      }}
+    >
       <Navbar />
-      {/* Sections will be added here */}
-      <main style={{ paddingTop: '80px', padding: '100px 36px 40px' }}>
-        <h1 style={{ fontSize: '48px', fontWeight: 900 }}>
-          Jorge Israel López
-        </h1>
-      </main>
+      <Hero />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
