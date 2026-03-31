@@ -8,6 +8,8 @@
 import { useThemeContext } from "./store/ThemeContext";
 import Navbar from "./components/layout/Navbar";
 import ParticlesBackground from "./components/layout/ParticlesBackground";
+import AuroraEffect from "./components/layout/AuroraEffect";
+import CodeSymbols from "./components/layout/CodeSymbols";
 import Hero from "./sections/Hero";
 
 /**
@@ -26,6 +28,8 @@ const App = () => {
       }}
     >
       <ParticlesBackground />
+      <AuroraEffect />
+      <CodeSymbols />
       <Navbar />
       <Hero />
     </div>
