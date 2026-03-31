@@ -7,6 +7,7 @@
 
 import { useThemeContext } from "./store/ThemeContext";
 import Navbar from "./components/layout/Navbar";
+import ParticlesBackground from "./components/layout/ParticlesBackground";
 import Hero from "./sections/Hero";
 
 /**
@@ -24,6 +25,7 @@ const App = () => {
         color: "var(--text)",
       }}
     >
+      <ParticlesBackground />
       <Navbar />
       <Hero />
     </div>
