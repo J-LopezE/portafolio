@@ -6,6 +6,7 @@
  */
 
 import { useThemeContext } from './store/ThemeContext'
+import Navbar from './components/layout/Navbar'
 
 /**
  * Root component — entry point of the UI tree
@@ -15,17 +16,14 @@ const App = () => {
   const { isDark, toggleTheme } = useThemeContext()
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg)', color: 'var(--text)' }}>
-      {/* Temporary theme toggle — will be replaced by Navbar */}
-      <button
-        onClick={toggleTheme}
-        style={{ padding: '10px 20px', margin: '20px', background: 'var(--indigo)', color: '#fff', borderRadius: '8px', border: 'none', cursor: 'pointer' }}
-      >
-        {isDark ? '☀️ Light Mode' : '🌙 Dark Mode'}
-      </button>
-      <h1 style={{ padding: '20px', fontFamily: 'Inter' }}>
-        Jorge Israel López — Portfolio
-      </h1>
+   <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)' }}>
+      <Navbar />
+      {/* Sections will be added here */}
+      <main style={{ paddingTop: '80px', padding: '100px 36px 40px' }}>
+        <h1 style={{ fontSize: '48px', fontWeight: 900 }}>
+          Jorge Israel López
+        </h1>
+      </main>
     </div>
   )
 }
