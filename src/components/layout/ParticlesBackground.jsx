@@ -20,6 +20,7 @@ const ParticlesBackground = () => {
 
   return (
     <Particles
+      key={isDark ? 'dark' : 'light' }
       id="tsparticles"
       style={{
         position: 'fixed',

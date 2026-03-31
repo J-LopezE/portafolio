@@ -1,5 +1,5 @@
 /* ── Google Fonts ── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -9,32 +9,32 @@
 @layer base {
   :root {
     /* Paleta Dark — Índigo + Violeta */
-    --bg:        #0A0A1A;
-    --bg2:       #0F0F25;
-    --bg3:       #141430;
-    --indigo:    #6C63FF;
-    --violet:    #A78BFA;
-    --lavender:  #C4B5FD;
-    --border:    rgba(108, 99, 255, 0.15);
-    --glow:      rgba(108, 99, 255, 0.2);
-    --text:      #F5F3FF;
-    --text2:     #94A3B8;
-    --text3:     #3D3D6B;
+    --bg: #0a0a1a;
+    --bg2: #0f0f25;
+    --bg3: #141430;
+    --indigo: #6c63ff;
+    --violet: #a78bfa;
+    --lavender: #c4b5fd;
+    --border: rgba(108, 99, 255, 0.15);
+    --glow: rgba(108, 99, 255, 0.2);
+    --text: #f5f3ff;
+    --text2: #94a3b8;
+    --text3: #3d3d6b;
   }
 
   .light {
     /* Paleta Light */
-    --bg:        #FAFAFF;
-    --bg2:       #F0EEFF;
-    --bg3:       #FFFFFF;
-    --indigo:    #5B52E8;
-    --violet:    #7C6FD4;
-    --lavender:  #A78BFA;
-    --border:    rgba(91, 82, 232, 0.14);
-    --glow:      rgba(91, 82, 232, 0.1);
-    --text:      #0A0A1A;
-    --text2:     #5A607A;
-    --text3:     #B0AACE;
+    --bg: #fafaff;
+    --bg2: #f0eeff;
+    --bg3: #ffffff;
+    --indigo: #5b52e8;
+    --violet: #7c6fd4;
+    --lavender: #a78bfa;
+    --border: rgba(91, 82, 232, 0.14);
+    --glow: rgba(91, 82, 232, 0.1);
+    --text: #0a0a1a;
+    --text2: #5a607a;
+    --text3: #b0aace;
   }
 
   * {
@@ -50,33 +50,37 @@
   body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     overflow-x: hidden;
-    transition: background-color 0.5s ease, color 0.4s ease;
+    transition:
+      background-color 0.5s ease,
+      color 0.4s ease;
   }
 }
 
 /* ── Navbar ── */
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 36px;
-  background: rgba(10,10,26,0.75);
+  background: rgba(10, 10, 26, 0.75);
   backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--border);
   transition: all 0.4s ease;
 }
 
 .light .navbar {
-  background: rgba(250,250,255,0.82);
+  background: rgba(250, 250, 255, 0.82);
 }
 
 .navbar--scrolled {
-  box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
 }
 
 .navbar__logo {
@@ -183,8 +187,15 @@
 }
 
 @keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.5); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.5);
+  }
 }
 
 .hero__title {
@@ -192,7 +203,7 @@
   flex-direction: column;
   font-size: clamp(36px, 6vw, 72px);
   font-weight: 900;
-  line-height: 1.0;
+  line-height: 1;
   letter-spacing: -2.5px;
   margin-bottom: 10px;
 }
@@ -202,7 +213,12 @@
 }
 
 .hero__role {
-  background: linear-gradient(135deg, var(--indigo) 0%, var(--violet) 50%, var(--lavender) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--indigo) 0%,
+    var(--violet) 50%,
+    var(--lavender) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200%;
@@ -210,8 +226,13 @@
 }
 
 @keyframes gradientShift {
-  0%, 100% { background-position: 0%; }
-  50% { background-position: 100%; }
+  0%,
+  100% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
 }
 
 .hero__sub {
@@ -289,9 +310,18 @@
 }
 
 @keyframes scrollHint {
-  0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
-  60% { opacity: 1; transform: scaleY(1); }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  60% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .hero__scroll-label {
@@ -299,4 +329,62 @@
   color: var(--text3);
   letter-spacing: 3px;
   text-transform: uppercase;
+}
+
+/* ── Aurora Effect ── */
+.aurora {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+}
+.aurora--active {
+  animation: auroraSweep 1s cubic-bezier(0.2, 0, 0.8, 1);
+}
+
+@keyframes auroraSweep {
+  0% {opacity: 0;}
+  25% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+/* ── Code Symbols ── */
+.code-symbols {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.code-symbols__item {
+  position: absolute;
+  font-family: 'Fira Code', monospace;
+  font-weight: 500;
+  user-select: none;
+  transition: color 0.5s ease;
+  animation: symbolFloat 8s ease-in-out infinite;
+}
+
+.code-symbols__item:nth-child(odd) {
+  animation-duration: 10s;
+  animation-delay: -3s;
+}
+
+.code-symbols__item:nth-child(even) {
+  animation-duration: 7s;
+  animation-delay: -1s;
+}
+
+@keyframes symbolFloat {
+  0%, 100% { transform: translateY(0px)  rotate(var(--r, 0deg)); }
+  50%       { transform: translateY(-14px) rotate(var(--r, 0deg)); }
 }
