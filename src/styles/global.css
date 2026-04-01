@@ -149,6 +149,48 @@
   opacity: 0.85;
 }
 
+/* ── Language toggle button ── */
+.navbar__lang-btn {
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text2);
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.navbar__lang-btn:hover {
+  background: var(--glow);
+  color: var(--violet);
+  border-color: var(--violet);
+}
+
+/* ── Navbar responsive ── */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__lang-btn {
+    font-size: 11px;
+    padding: 0 10px;
+    height: 32px;
+  }
+
+  .navbar__cta {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
 /* ── Hero ── */
 .hero {
   position: relative;

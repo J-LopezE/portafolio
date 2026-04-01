@@ -1,16 +1,10 @@
 /**
  * @fileoverview About section component
- * @description Presents personal bio, stats and tech stack.
- * Two-column grid layout — stacks to single column on mobile.
  * @module sections/About
  */
 
-import { useThemeContext } from "../store/ThemeContext";
+import { useTranslation } from "react-i18next";
 
-/**
- * Tech stack chips data
- * @type {string[]}
- */
 const TECH_STACK = [
   "React.js",
   "Node.js",
@@ -26,63 +20,54 @@ const TECH_STACK = [
   "Docker",
 ];
 
-/**
- * Personal stats data
- * @type {Array<{number: string, label: string}>}
- */
-const STATS = [
-  { number: "2+", label: "Years building" },
-  { number: "5+", label: "Projects live" },
-  { number: "∞", label: "Coffee consumed" },
-];
-
-/**
- * About component
- * @returns {JSX.Element}
- */
 const About = () => {
-  const { isDark } = useThemeContext();
+  const { t } = useTranslation();
 
   return (
     <section className="about section-wrap" id="about">
-      {/* Section header */}
       <div className="section-header reveal">
-        <span className="section-label">About me</span>
+        <span className="section-label">{t("about.label")}</span>
         <h2 className="section-title">
-          Passionate about <span className="gradient-text">crafting</span>
+          {t("about.title")}{" "}
+          <span className="gradient-text">{t("about.titleHighlight")}</span>
           <br />
-          great software
+          {t("about.titleEnd")}
         </h2>
       </div>
 
-      {/* Two column grid */}
       <div className="about__grid reveal">
-        {/* Left — Bio + Stats */}
         <div className="about__bio">
-          <p className="about__text">
-            I'm a <strong>Full Stack Developer</strong> focused on building
-            clean, scalable, production-ready applications with a sharp eye for
-            UX and performance.
-          </p>
-          <p className="about__text">
-            Currently building <strong>CE Energy</strong> — a real-time energy
-            monitoring SaaS — and <strong>Gym Manager</strong>, donated to a
-            real gym, both integrating AI agents via Claude API.
-          </p>
-          <p className="about__text">Always learning. Always shipping.</p>
-
-          {/* Stats */}
+          <p className="about__text">{t("about.bio1")}</p>
+          <p className="about__text">{t("about.bio2")}</p>
+          <p className="about__text">{t("about.bio3")}</p>
           <div className="about__stats">
-            {STATS.map((stat) => (
-              <div key={stat.label} className="about__stat">
-                <span className="about__stat-number">{stat.number}</span>
-                <span className="about__stat-label">{stat.label}</span>
-              </div>
-            ))}
+            <div className="about__stat">
+              <span className="about__stat-number">
+                {t("about.stat1.number")}
+              </span>
+              <span className="about__stat-label">
+                {t("about.stat1.label")}
+              </span>
+            </div>
+            <div className="about__stat">
+              <span className="about__stat-number">
+                {t("about.stat2.number")}
+              </span>
+              <span className="about__stat-label">
+                {t("about.stat2.label")}
+              </span>
+            </div>
+            <div className="about__stat">
+              <span className="about__stat-number">
+                {t("about.stat3.number")}
+              </span>
+              <span className="about__stat-label">
+                {t("about.stat3.label")}
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* Right — Tech Stack */}
         <div className="about__stack">
           {TECH_STACK.map((tech) => (
             <span key={tech} className="tech-chip">
