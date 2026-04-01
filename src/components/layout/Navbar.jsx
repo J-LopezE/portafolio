@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 import { useThemeContext } from "../../store/ThemeContext";
-
-const LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-];
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const { isDark, toggleTheme } = useThemeContext();
+  const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
+
+  const isEN = i18n.language === "en";
+
+  const toggleLang = () => {
+    i18n.changeLanguage(isEN ? "es" : "en");
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -22,6 +24,14 @@ const Navbar = () => {
     e.preventDefault();
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const LINKS = [
+    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.projects"), href: "#projects" },
+    { label: t("nav.aiAgent"), href: "#ai" },
+    { label: t("nav.github"), href: "#github" },
+    { label: t("nav.contact"), href: "#contact" },
+  ];
 
   return (
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
@@ -40,6 +50,13 @@ const Navbar = () => {
       </div>
       <div className="navbar__actions">
         <button
+          onClick={toggleLang}
+          aria-label="Toggle language"
+          className="navbar__lang-btn"
+        >
+          {isEN ? "ES" : "EN"}
+        </button>
+        <button
           onClick={toggleTheme}
           aria-label="Toggle theme"
           className="navbar__theme-btn"
@@ -47,7 +64,7 @@ const Navbar = () => {
           {isDark ? <Sun size={16} /> : <Moon size={16} />}
         </button>
         <button className="navbar__cta" onClick={(e) => goTo(e, "#contact")}>
-          Hire me
+          {t("nav.hire")}
         </button>
       </div>
     </nav>

@@ -1,34 +1,53 @@
-import {useThemeContext} from "../store/ThemeContext";
+/**
+ * @fileoverview Hero section component
+ * @module sections/Hero
+ */
+
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
-  const {isDark} = useThemeContext();
+  const { t } = useTranslation();
 
   return (
-     <section className="hero" id="hero">
+    <section className="hero" id="hero">
       <div className="hero__badge">
         <span className="hero__badge-dot"></span>
-        Open to work · Full Stack + AI
+        {t("hero.badge")}
       </div>
       <h1 className="hero__title">
-        <span className="hero__name">Jorge Israel López</span>
-        <span className="hero__role">Full Stack Developer</span>
+        <span className="hero__name">{t("hero.name")}</span>
+        <span className="hero__role">{t("hero.role")}</span>
       </h1>
       <p className="hero__sub">
-        Building <em>scalable web applications</em> and integrating{' '}
-        <em>AI agents</em> into real-world products.
-        React · Node.js · Claude API
+        {t("hero.sub")}
+        <br />
+        <em>{t("hero.stack")}</em>
       </p>
       <div className="hero__btns">
-        <button className="btn-primary" onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}>
-          View My Work
+        <button
+          className="btn-primary"
+          onClick={() =>
+            document
+              .querySelector("#projects")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          {t("hero.cta1")}
         </button>
-        <button className="btn-outline" onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}>
-          Get in Touch
+        <button
+          className="btn-outline"
+          onClick={() =>
+            document
+              .querySelector("#contact")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          {t("hero.cta2")}
         </button>
       </div>
       <div className="hero__scroll">
         <div className="hero__scroll-line"></div>
-        <span className="hero__scroll-label">Scroll</span>
+        <span className="hero__scroll-label">{t("hero.scroll")}</span>
       </div>
     </section>
   );

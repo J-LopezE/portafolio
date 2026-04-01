@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "aiAgent": "AI Agent",
+    "github": "GitHub",
+    "contact": "Contact",
+    "hire": "Hire me"
+  },
+  "hero": {
+    "badge": "Open to work · Full Stack + AI",
+    "name": "Jorge Israel López",
+    "role": "Full Stack Developer",
+    "sub": "Building scalable web applications and integrating AI agents into real-world products.",
+    "stack": "React · Node.js · Claude API",
+    "cta1": "View My Work",
+    "cta2": "Get in Touch",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "label": "About me",
+    "title": "Passionate about",
+    "titleHighlight": "crafting",
+    "titleEnd": "great software",
+    "bio1": "I'm a Full Stack Developer focused on building clean, scalable, production-ready applications with a sharp eye for UX and performance.",
+    "bio2": "Currently building CE Energy — a real-time energy monitoring SaaS — and Gym Manager, donated to a real gym, both integrating AI agents via Claude API.",
+    "bio3": "Always learning. Always shipping.",
+    "stat1": { "number": "2+", "label": "Years building" },
+    "stat2": { "number": "5+", "label": "Projects live" },
+    "stat3": { "number": "∞",  "label": "Coffee consumed" }
+  }
+}
